@@ -1,5 +1,7 @@
 package com.mycompany.newmain;
 
+import java.util.ArrayList;
+import java.util.Scanner;
 import java.util.regex.Pattern;
 
 /**
@@ -159,7 +161,11 @@ public class Newmain {
         String u = in.nextLine();
         System.out.print("Login password: ");
         String p = in.nextLine();
-        System.out.println(account.returnLoginStatus(account.loginUser(u, p)));
+boolean ok = account.loginUser(u, p);
+            System.out.println(account.returnLoginStatus(ok));
+            if (ok) {
+                Message.startMessaging(in);
+            }
+        }
     }
-}
 }
